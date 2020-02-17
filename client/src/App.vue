@@ -113,4 +113,7 @@ export default {
   background-color: #ddd;
   color: black;
 }
+#container-router-view * {
+  padding: 5px;
+}
 </style>
