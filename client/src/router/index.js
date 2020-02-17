@@ -1,9 +1,5 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import GraphQl from "../views/GraphQLExample.vue";
-import DataTableBigData from "../views/DataTableBigData.vue";
-import CRUD from "../views/CRUD.vue";
-import SelectAutoComplete from "../views/SelectAutoComplete.vue";
 
 Vue.use(VueRouter);
 
@@ -11,22 +7,22 @@ const routes = [
   {
     path: "/graphql-example",
     name: "GraphQLExample",
-    component: () => import(/* webpackChunkName: "about" */ GraphQl)
+    component: () => import("../views/GraphQLExample.vue")
   },
   {
     path: "/data-table-example",
     name: "DataTableExample",
-    component: () => import(/* webpackChunkName: "about" */ DataTableBigData)
+    component: () => import("../views/DataTableBigData.vue")
   },
   {
     path: "/crud",
     name: "CRUD",
-    component: () => import(/* webpackChunkName: "about" */ CRUD)
+    component: () => import("../views/CRUD.vue")
   },
   {
     path: "/select-auto-complete",
     name: "SelectAutoComplete",
-    component: () => import(/* webpackChunkName: "about" */ SelectAutoComplete)
+    component: () => import("../views/SelectAutoComplete.vue")
   }
 ];
 

@@ -2,19 +2,15 @@
   <v-app id="inspire">
     <v-navigation-drawer v-model="drawer" app clipped>
       <v-list dense>
-        <v-list-item v-for="item in items" :key="item.text" link>
+        <v-list-item v-for="item in items" :key="item.text" :to="item.link" link>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
           <v-list-item-content>
-            <v-list-item-title>
-              {{ item.text }}
-            </v-list-item-title>
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-subheader class="mt-4 grey--text text--darken-1"
-          >SUBSCRIPTIONS</v-subheader
-        >
+        <v-subheader class="mt-4 grey--text text--darken-1">SUBSCRIPTIONS</v-subheader>
         <v-list>
           <v-list-item v-for="item in items2" :key="item.text" link>
             <v-list-item-avatar>
@@ -22,7 +18,7 @@
                 :src="
                   `https://randomuser.me/api/portraits/men/${item.picture}.jpg`
                 "
-                alt=""
+                alt
               />
             </v-list-item-avatar>
             <v-list-item-title v-text="item.text" />
@@ -32,17 +28,13 @@
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-plus-circle-outline</v-icon>
           </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1"
-            >Browse Channels</v-list-item-title
-          >
+          <v-list-item-title class="grey--text text--darken-1">Browse Channels</v-list-item-title>
         </v-list-item>
         <v-list-item link>
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-settings</v-icon>
           </v-list-item-action>
-          <v-list-item-title class="grey--text text--darken-1"
-            >Manage Subscriptions</v-list-item-title
-          >
+          <v-list-item-title class="grey--text text--darken-1">Manage Subscriptions</v-list-item-title>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -66,13 +58,11 @@
       </v-row>
     </v-app-bar>
 
-    <v-content>
-      <v-container>
-        <transition>
-          <keep-alive>
-            <router-view></router-view>
-          </keep-alive>
-        </transition>
+    <v-content id="container-router-view">
+      <v-container fluid>
+        <v-slide-y-transition mode="out-in">
+          <router-view class="elevation-3"></router-view>
+        </v-slide-y-transition>
       </v-container>
     </v-content>
   </v-app>
@@ -80,9 +70,6 @@
 
 <script>
 export default {
-  props: {
-    source: String
-  },
   data: () => ({
     drawer: null,
     items: [
@@ -120,3 +107,10 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+#container-router-view {
+  background-color: #ddd;
+  color: black;
+}
+</style>

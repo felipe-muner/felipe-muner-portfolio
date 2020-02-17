@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "Select Auto Complete"
+  name: "SelectAutoComplete"
 };
 </script>

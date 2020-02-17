@@ -1,11 +1,12 @@
 <template>
   <div class="home">
-    <h1>GraphQL Example</h1>
+    <h1>graphQL</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "GraphQL Example"
+  name: "CRUD",
+  components: {}
 };
 </script>

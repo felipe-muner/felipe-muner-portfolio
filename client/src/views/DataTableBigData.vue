@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "Data Table Big Data"
+  name: "DataTableBigData"
 };
 </script>
