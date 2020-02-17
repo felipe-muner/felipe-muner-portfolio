@@ -39,7 +39,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left color="#ddd" dense>
+    <v-app-bar app clipped-left color="#eee" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-icon class="mx-4">fab fa-youtube</v-icon>
       <v-toolbar-title class="mr-12 align-center">
@@ -103,7 +103,7 @@ export default {
     ]
   }),
   created() {
-    // this.$vuetify.theme.dark = true;
+    this.$vuetify.theme.dark = false;
   }
 };
 </script>

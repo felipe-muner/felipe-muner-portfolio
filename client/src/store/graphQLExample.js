@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   namespace: true,
   state: {
-    continents: []
+    continents: "loading..."
   },
   getters: {
     getContinents: state => state.continents
@@ -23,9 +23,12 @@ export default {
           query: `
             query countries {
               continents {
+                code
                 name
                 countries{
+                  code
                   name
+                  emoji
                 }
               }
             }
