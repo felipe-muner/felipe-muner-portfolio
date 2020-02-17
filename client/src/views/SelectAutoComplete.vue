@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    hello
+    <h1>Select Auto Complete</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home"
+  name: "Select Auto Complete"
 };
 </script>
