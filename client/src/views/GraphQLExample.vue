@@ -16,12 +16,16 @@
           </v-flex>
           <v-flex xs4>
             <v-card>
-              <v-card-text class="px-0"></v-card-text>
+              <v-card-text class="px-0">
+                <ApolloQueryInline />
+              </v-card-text>
             </v-card>
           </v-flex>
           <v-flex xs4>
             <v-card>
-              <v-card-text class="px-0"></v-card-text>
+              <v-card-text class="px-0">
+                <QueryFile />
+              </v-card-text>
             </v-card>
           </v-flex>
         </v-row>
@@ -32,15 +36,22 @@
 
 <script>
 import ApolloAttribute from "../components/graphQL/ApolloAttribute";
-// import ApolloQueryInline from "../graphQL/ApolloQueryInline";
-// import QueryFile from "../graphQL/QueryFile";
+import ApolloQueryInline from "../components/graphQL/ApolloQueryInline";
+import QueryFile from "../components/graphQL/QueryFile";
+import { mapActions } from "vuex";
 
 export default {
   name: "graphQL",
   components: {
-    ApolloAttribute
-    // ApolloQueryInline,
-    // QueryFile
+    ApolloAttribute,
+    ApolloQueryInline,
+    QueryFile
+  },
+  methods: {
+    ...mapActions(["loadContinents"])
+  },
+  created() {
+    this.loadContinents();
   }
 };
 </script>
