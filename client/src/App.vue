@@ -39,11 +39,11 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar app clipped-left color="red" dense>
+    <v-app-bar app clipped-left color="#ddd" dense>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-icon class="mx-4">fab fa-youtube</v-icon>
       <v-toolbar-title class="mr-12 align-center">
-        <span class="title">Felipe Muner Portfolio</span>
+        <span class="title">Felipe Muner - Portfolio</span>
       </v-toolbar-title>
       <v-spacer />
       <v-row align="center" style="max-width: 650px">
@@ -59,9 +59,9 @@
     </v-app-bar>
 
     <v-content id="container-router-view">
-      <v-container fluid>
+      <v-container fluid class="mt-5">
         <v-slide-y-transition mode="out-in">
-          <router-view class="elevation-3"></router-view>
+          <router-view class="elevation-15"></router-view>
         </v-slide-y-transition>
       </v-container>
     </v-content>
@@ -103,17 +103,10 @@ export default {
     ]
   }),
   created() {
-    this.$vuetify.theme.dark = true;
+    // this.$vuetify.theme.dark = true;
   }
 };
 </script>
 
 <style scoped>
-#container-router-view {
-  background-color: #ddd;
-  color: black;
-}
-#container-router-view * {
-  padding: 5px;
-}
 </style>
