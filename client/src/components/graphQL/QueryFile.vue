@@ -1,8 +1,8 @@
 <template>
-  <div class="hello">
+  <div>
     <h2 class="mb-5 text-center">Group by Continent</h2>
     <template>
-      <v-expansion-panels>
+      <v-expansion-panels class="pa-2">
         <v-expansion-panel v-for="continent in getContinents" :key="continent.code">
           <v-expansion-panel-header>{{continent.name}}</v-expansion-panel-header>
           <v-expansion-panel-content>
