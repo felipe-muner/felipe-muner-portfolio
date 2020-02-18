@@ -3,13 +3,9 @@
     <v-container>
       <v-row class="pt-0">
         <v-col class="pt-0">
-          <v-btn small color="secondary" @click="getData({way:'local'})">Local Data</v-btn>
-          <v-btn
-            small
-            color="secondary"
-            @click="getData({way:'remote'})"
-            class="ml-5"
-          >External Server</v-btn>
+          <div class="text-left">
+            <ExternalDataTable />
+          </div>
         </v-col>
       </v-row>
       <v-row>
@@ -33,7 +29,18 @@
               :search="search"
               item-key="id"
               show-select
-            ></v-data-table>
+            >
+              <template slot="items" slot-scope="props">
+                <tr>
+                  <td>{{ props.item.name }}</td>
+                  <td class="text-xs-right">{{ props.item.calories }}</td>
+                  <td class="text-xs-right">{{ props.item.fat }}</td>
+                  <td class="text-xs-right">{{ props.item.carbs }}</td>
+                  <td class="text-xs-right">{{ props.item.protein }}</td>
+                  <td class="text-xs-right">{{ props.item.iron }}</td>
+                </tr>
+              </template>
+            </v-data-table>
           </v-card>
         </v-col>
       </v-row>
@@ -43,6 +50,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import ExternalDataTable from "./ExternalDataTable";
 export default {
   data() {
     return {
@@ -62,7 +70,7 @@ export default {
         {
           text: "URL",
           align: "left",
-          value: "url"
+          value: "title"
         },
         {
           text: "albumId",
@@ -79,6 +87,9 @@ export default {
     getData(way) {
       alert(JSON.stringify(way));
     }
+  },
+  components: {
+    ExternalDataTable
   }
 };
 </script>
