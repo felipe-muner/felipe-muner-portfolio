@@ -5,7 +5,7 @@ export default {
   namespace: true,
   state: {
     continents: "loading...",
-    filteredContinent: ""
+    filteredContinent: []
   },
   getters: {
     getContinents: state => state.continents,
@@ -15,20 +15,15 @@ export default {
     SETCONTINENTS(state, continents) {
       state.continents = continents;
     },
-    FILTERCONTINENT(state) {
-      console.log("vou filtrar");
-      // console.log(continent);
-      console.log("vou filtrar");
-
-      state.filteredContinent = "qwe";
+    FILTERCONTINENT(state, payload) {
+      state.filteredContinent = state.continents.filter(
+        cont => cont.code === payload.code
+      )[0].countries;
     }
   },
   actions: {
-    filterContinent({ commit }) {
-      // console.log(dt);
-      console.log("action payload acima");
-
-      commit("FILTERCONTINENT");
+    filterContinent({ commit }, payload) {
+      commit("FILTERCONTINENT", payload);
     },
 
     async loadContinents({ commit }) {
