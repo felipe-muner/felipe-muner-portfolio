@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2 class="text-center">Countries</h2>
+    <h2 class="mb-4 text-center">Countries</h2>
     <ApolloQuery :query="require('../../graphql/countries.gql')">
       <template v-slot="{result: {loading, error, data}}">
         <div v-if="loading">

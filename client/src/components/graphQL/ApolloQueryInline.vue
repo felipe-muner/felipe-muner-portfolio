@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2 class="mb-5 text-center">Filter by continent</h2>
+    <h2 class="mb-4 text-center">Filter by continent</h2>
     <div v-for="continent in getContinents" :key="continent.code" class="ml-3 mb-3">
       <v-btn @click="submitToFilter({code: continent.code})" color="primary">{{continent.name}}</v-btn>
     </div>

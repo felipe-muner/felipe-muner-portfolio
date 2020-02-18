@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   namespace: true,
   state: {
-    continents: "loading...",
+    continents: [],
     filteredContinent: []
   },
   getters: {
