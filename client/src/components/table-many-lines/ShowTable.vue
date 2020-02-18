@@ -27,17 +27,17 @@
               :headers="headers"
               :items="getPhotos"
               :search="search"
-              item-key="id"
               show-select
             >
-              <template slot="items" slot-scope="props">
+              <template v-slot:item="props">
                 <tr>
-                  <td>{{ props.item.name }}</td>
-                  <td class="text-xs-right">{{ props.item.calories }}</td>
-                  <td class="text-xs-right">{{ props.item.fat }}</td>
-                  <td class="text-xs-right">{{ props.item.carbs }}</td>
-                  <td class="text-xs-right">{{ props.item.protein }}</td>
-                  <td class="text-xs-right">{{ props.item.iron }}</td>
+                  <td>
+                    <v-checkbox v-model="selected" :value="props.item"></v-checkbox>
+                  </td>
+                  <td>{{ props.item.id }}</td>
+                  <td>{{ props.item.title }}</td>
+                  <td>{{ props.item.url }}</td>
+                  <td>{{ props.item.albumId }}</td>
                 </tr>
               </template>
             </v-data-table>
@@ -60,8 +60,7 @@ export default {
         {
           text: "ID",
           align: "left",
-          value: "id",
-          class: "px-1"
+          value: "id"
         },
         {
           text: "Title",
