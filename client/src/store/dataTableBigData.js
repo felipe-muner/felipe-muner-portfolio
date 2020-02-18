@@ -1,7 +1,5 @@
 import photos from "../../fakeDB/photos";
 
-console.log(photos);
-
 export default {
   namespace: true,
   state: {
