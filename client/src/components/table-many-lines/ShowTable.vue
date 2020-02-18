@@ -14,21 +14,8 @@
             <v-card-title>
               Albums
               <v-spacer></v-spacer>
-              <v-text-field
-                v-model="search"
-                append-icon="search"
-                label="Search"
-                single-line
-                hide-details
-              ></v-text-field>
             </v-card-title>
-            <v-data-table
-              v-model="selected"
-              :headers="headers"
-              :items="getPhotos"
-              :search="search"
-              show-select
-            >
+            <v-data-table v-model="selected" :headers="headers" :items="getPhotos" show-select>
               <template v-slot:item="props">
                 <tr>
                   <td>
@@ -54,7 +41,7 @@ import ExternalDataTable from "./ExternalDataTable";
 export default {
   data() {
     return {
-      search: "",
+      ola: "",
       selected: [],
       headers: [
         {
