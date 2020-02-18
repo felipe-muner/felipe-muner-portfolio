@@ -60,7 +60,8 @@ export default {
         {
           text: "ID",
           align: "left",
-          value: "id"
+          value: "id",
+          class: "px-1"
         },
         {
           text: "Title",
