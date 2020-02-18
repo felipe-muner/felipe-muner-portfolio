@@ -18,7 +18,7 @@ export default {
     FILTERCONTINENT(state, payload) {
       state.filteredContinent = state.continents.filter(
         cont => cont.code === payload.code
-      )[0].countries;
+      )[0];
     }
   },
   actions: {
