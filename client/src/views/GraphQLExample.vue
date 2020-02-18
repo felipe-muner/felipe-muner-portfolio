@@ -4,32 +4,30 @@
     <h3
       class="text-center"
     >The system gets data from a remote GraphQL server and show it in 3 differents ways, each component has your own logic</h3>
-    <v-container class>
-      <v-container class>
-        <v-row>
-          <v-flex xs4>
-            <v-card>
-              <v-card-text class="px-0">
-                <ApolloAttribute />
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs4>
-            <v-card>
-              <v-card-text class="px-0">
-                <ApolloQueryInline />
-              </v-card-text>
-            </v-card>
-          </v-flex>
-          <v-flex xs4>
-            <v-card>
-              <v-card-text class="px-0">
-                <QueryFile />
-              </v-card-text>
-            </v-card>
-          </v-flex>
-        </v-row>
-      </v-container>
+    <v-container>
+      <v-row>
+        <v-flex xs4>
+          <v-card>
+            <v-card-text class="px-0">
+              <ApolloAttribute />
+            </v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex xs4>
+          <v-card>
+            <v-card-text class="px-0">
+              <ApolloQueryInline />
+            </v-card-text>
+          </v-card>
+        </v-flex>
+        <v-flex xs4>
+          <v-card>
+            <v-card-text class="px-0">
+              <QueryFile />
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-row>
     </v-container>
   </div>
 </template>
